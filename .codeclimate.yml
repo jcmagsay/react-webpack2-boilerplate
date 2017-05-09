@@ -1,0 +1,15 @@
+engines:
+  eslint:
+    enabled: true
+    checks:
+      global-require:
+        enabled: false
+  csslint:
+    enabled: true
+  duplication:
+    enabled: false
+exclude_paths:
+- node_modules/**/*
+ratings:
+  paths:
+  - src/**
