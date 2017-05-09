@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "heroku-postbuild": "npm run build",
-    "start:dev": "webpack-dev-server -port 8080 --hot --host 0.0.0.0",
+    "start:dev": "webpack-dev-server --port 8080 --hot --host 0.0.0.0",
     "start": "node src/server/server.js"
   },
   "repository": {

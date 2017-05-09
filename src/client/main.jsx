@@ -1,10 +1,42 @@
-'use strict';
-
-import 'styles/main.scss';
-
 import React from 'react';
-import { render } from 'react-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import classNames from 'classnames';
+import routes from 'routes/routes';
+import Nav from 'layout/nav/nav';
 
-import Index from 'components/Index/Index';
+export default class Main extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-render(<Index items={[1,2,3]} />, document.getElementById('js-main'));
+  render() {
+    return (
+      <Router>
+        <div>
+          <header role="banner">
+            <Nav />
+          </header>
+          <main id="main" role="main">
+            <Switch>
+              {routes.map((route, i) =>
+                <Route
+                  exact
+                  key={`route-${i}`}
+                  path={route.path}
+                  render={props => {
+                    return (
+                      <route.component {...props} />
+                    )
+                  }}
+                />
+              )}
+            </Switch>
+          </main>
+          <footer>
+            Footer
+          </footer>
+        </div>
+      </Router>
+    );
+  }
+}

@@ -47,7 +47,10 @@ module.exports = {
     'alias': {
       'styles': path.resolve(__dirname, './src/assets/styles'),
       'client': path.resolve(__dirname, './src/client'),
-      'components': path.resolve(__dirname, './src/client/components')
+      'components': path.resolve(__dirname, './src/client/components'),
+      'layout': path.resolve(__dirname, './src/client/layout'),
+      'pages': path.resolve(__dirname, './src/client/pages'),
+      'routes': path.resolve(__dirname, './src/routes')
     },
     'extensions': ['.js', '.json', '.jsx', '.scss']
   },
